@@ -1,0 +1,93 @@
+.product-list {
+    max-width: 700px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    justify-content: center;
+    
+}
+
+.product-list article {
+    background: #FFF;
+    border: 2px solid rgb(92, 65, 248);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-list article p {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(0, 224, 67);
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+.product-list article img {
+    padding: 10px;
+    max-width: 22%;
+    border-radius: 5px 5px 0 0;
+}
+
+.product-list article a {
+    margin: 5px;
+    width: 95%;
+    height: 42px;
+    border-radius: 5px;
+    border: 2px solid #3F00BF;
+    background: none;
+    margin-top: 10px;
+    color: #3F00BF;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.product-list article a:hover {
+    background: #3F00BF;
+    color: #FFF;
+}
+
+.product-list .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+
+.product-list .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.product-list .actions button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    background: #3F00BF;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.product-list .actions button[disabled] {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.product-list .actions button:hover {
+    opacity: 0.7;
+}
+
+.product-list .actions button[disabled]:hover {
+    opacity: 0.5;
+}
+

@@ -28,44 +28,49 @@ export default class Product extends Component {
                 <p>{product.description}</p>
                 <p> URL: <a href={product.url}>{product.url} </a> </p>
        
+                <PayPalButton
+                    amount={product.value}
+                    onSuccess={async (details, data) => {
+                        try {
+                            await api.post("/pedidos", {
+                                id: details.id,
+                                adress_line_1: details.payer.address.address_line_1,
+                                admin_area_1: details.payer.address.admin_area_1,
+                                admin_area_2: details.payer.address.admin_area_1,
+                                country_code: details.payer.address.country_code,
+                                postal_code: details.payer.address.postal_code,
+                                given_name: details.payer.name.given_name,
+                                surname: details.payer.name.surname,
+                                email_adress: details.payer.email_address,
+                                payer_id: details.payer.payer_id,
+                                phone_number: details.payer.phone.phone_number.national_number,
+                                currency_code: details.purchase_units[0].amount.currency_code,
+                                value: details.purchase_units[0].amount.value
+                            })
+                            .then(returno =>{
+                                console.log("Sucesso", returno);
+                                alert("Cadastrado no banco local");
 
-        <PayPalButton amount={product.value} onSuccess={ async  (details, data) => {
-        console.log("detauiks",details);
-        console.log("detauiks",data);
-        
-        try {
-        await api.post("/pedidos", {
-            id: details.id,
-            adress_line_1: details.payer.address.adress_line_1,
-            admin_area_1: details.payer.address.admin_area_1,
-            admin_area_2: details.payer.address.admin_area_1,
-            country_code: details.payer.address.country_code,
-            postal_code: details.payer.address.postal_code,
-            given_name: details.payer.name.given_name,
-            surname: details.payer.name.surname,
-            email_adress: details.payer.email_adress,
-            payer_id: details.payer.payer_id,
-            phone_number: details.payer.phone.phone_number,
-            currency_code: details.purchase_units[0].amount.currency_code,
-            value: details.purchase_units[0].amount.value
-        })
+                            })
+                            .catch(returno =>{
+                                console.log("Erro", returno);
+                                alert("Erro ao cadastrar no banco local");
+                            });
+                        } catch(err) {
+                            console.log("error",err);
+                            
+                        } 
 
-        .then(returno =>{
-            console.log("Sucesso", returno);
-        })
-        .catch(returno =>{
-            console.log("Erro", returno);
-        });
-    }catch(err){
-        console.log("error",err);
-    } 
-        alert("Transaction completed by " + details.payer.name.given_name);
-            return fetch("/paypal-transaction-complete", {
-            method: "post",
-            body: JSON.stringify({ orderID: data.orderID })
-          });
-        }}
-    /> 
+                        alert("Pedido realizado com sucesso!");
+                    }}
+                    onError={error => {
+                        alert("Erro ao realizar o pedido!");
+                        console.log('error', error);
+                    }}
+                    onCancel={cancelou => {
+                        alert('Compra cancelada');
+                    }}
+                /> 
             </div>
         );   
     }

@@ -3,7 +3,7 @@ import api from  "../../services/api";
 import { Link } from 'react-router-dom';
 
 import "./styles.css";
-import { userInfo } from 'os';
+
 
 export default class Main extends Component {
     state = {

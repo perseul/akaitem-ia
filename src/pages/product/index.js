@@ -27,8 +27,9 @@ export default class Product extends Component {
                 <h1>{product.title}</h1>
                 <p>{product.description}</p>
                 <p> URL: <a href={product.url}>{product.url} </a> </p>
-       
-                <PayPalButton
+               <div className="price"> <p>R$ {product.value}</p> </div>
+
+                <div className="PayPalButton"><PayPalButton
                     amount={product.value}
                     onSuccess={async (details, data) => {
                         try {
@@ -70,7 +71,8 @@ export default class Product extends Component {
                     onCancel={cancelou => {
                         alert('Compra cancelada');
                     }}
-                /> 
+                />
+                </div> 
             </div>
         );   
     }

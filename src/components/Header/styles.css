@@ -11,20 +11,32 @@ header#main-header {
     align-items: center;
 }
 
-.logo-aka img { 
-    max-width: 55%;
-    margin-top: 10px;
-    margin-left: 50px;
-    padding: 10px;
-    
+.logo-aka img{
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.logo-aka { 
+    width: 120px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.elipse-aka {
+    width: 75px;
+    margin-top: 5px;
+    margin-left: 20px;
 }
 
 .elipse-aka img{
     animation: elipse-aka-spin infinite 20s linear;
     pointer-events: none;
-    max-width: 55%;
-    margin-top: 5px;
-    margin-left: 0px;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
 }
 
 @keyframes elipse-aka-spin {

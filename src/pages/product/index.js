@@ -27,7 +27,7 @@ export default class Product extends Component {
                 <h1>{product.title}</h1>
                 <p>{product.description}</p>
                 <p> URL: <a href={product.url}>{product.url} </a> </p>
-               <div className="price"> <p>R$ {product.value}</p> </div>
+                <div className="price"> <p>R$ {product.value} </p> </div>
 
                 <div className="PayPalButton"><PayPalButton
                     amount={product.value}

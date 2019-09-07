@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="258" viewBox="0 0 180 258">
+  <g id="logoaka" transform="translate(-879 -19)">
+    <text id="Aka" transform="translate(883 133)" fill="#00c8ff" font-size="70" font-family="Bungee-Regular, Bungee" letter-spacing="0.065em"><tspan x="0" y="0">Aka</tspan></text>
+    <text id="Tem" transform="translate(905 213)" fill="#00c8ff" font-size="70" font-family="Bungee-Regular, Bungee" letter-spacing="0.02em"><tspan x="0" y="0">Tem</tspan></text>
+    <ellipse id="Elipse_1" data-name="Elipse 1" cx="10" cy="9" rx="10" ry="9" transform="translate(879 139)" fill="#00c8ff"/>
+    <rect id="Retângulo_1" data-name="Retângulo 1" width="17" height="46" rx="2" transform="translate(880 166)" fill="#00c8ff"/>
+    <rect id="Retângulo_2" data-name="Retângulo 2" width="122" height="5" transform="translate(897 146)" fill="#00c8ff"/>
+    <rect id="Retângulo_3" data-name="Retângulo 3" width="22" height="11" transform="translate(1017 143)" fill="#00c8ff"/>
+    <path id="Polígono_1" data-name="Polígono 1" d="M13,0,26,22H0Z" transform="translate(1059 135) rotate(90)" fill="#00c8ff"/>
+  </g>
+</svg>

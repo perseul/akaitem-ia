@@ -6,6 +6,32 @@ header#main-header {
     font-weight: bold;
     color: #FFF;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.logo-aka img { 
+    max-width: 55%;
+    margin-top: 10px;
+    margin-left: 50px;
+    padding: 10px;
+    
+}
+
+.elipse-aka img{
+    animation: elipse-aka-spin infinite 20s linear;
+    pointer-events: none;
+    max-width: 55%;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+@keyframes elipse-aka-spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

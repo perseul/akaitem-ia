@@ -11,6 +11,21 @@ header#main-header {
     align-items: center;
 }
 
+
+
+.carrinho-total img{
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.carrinho-total {
+    position: absolute; right: 100px;
+    width: 50px;
+    margin-left: 500px;
+}
+
 .logo-aka img{
     box-sizing: border-box;
     max-width: 100%;
@@ -45,5 +60,22 @@ header#main-header {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@media (max-width:640px) {
+    .carrinho-total{
+        right: 20px;
+    }
+}
+@media (max-width:430px) {
+    .elipse-aka{
+        width: 50px;
+    }
+    .logo-aka {
+        width: 80px;
+    }
+    .carrinho-total {
+        width: 25px;
     }
 }

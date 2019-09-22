@@ -33,12 +33,12 @@
 
 .product-list article a {
     margin: 5px;
-    width: 95%;
+    /* width: 95%; */
     height: 42px;
     border-radius: 5px;
     border: 2px solid #3F00BF;
     background: none;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     color: #3F00BF;
     font-weight: bold;
     font-size: 16px;
@@ -91,3 +91,33 @@
     opacity: 0.5;
 }
 
+.botoes-compra {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 5px;
+}
+
+.botao-carrinho {
+    margin:10px;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid #3F00BF;
+}
+.botao-carrinho {
+    margin: 5px;
+}
+.botao-carrinho img {
+    max-width: none;
+    width: 30px;
+}
+.botoes-compra a,
+.botao-carrinho {
+    flex: 1;
+}
+
+
+.botao-carrinho:hover img{
+    transform: translateY(-5px);
+    transition: all 0.2s;
+}

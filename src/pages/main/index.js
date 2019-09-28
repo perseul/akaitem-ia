@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import api from  "../../services/api";
 import { Link } from 'react-router-dom';
 
-import carrinho from '../../assets/carrinho.svg'
+
 import "./styles.css";
 
 export default class Main extends Component {
@@ -25,7 +25,7 @@ export default class Main extends Component {
     };
 
     prevPage = () => {
-        const { page, productInfo } = this.state;
+        const { page } = this.state;
 
         if (page === 1) return;
 
@@ -43,36 +43,46 @@ export default class Main extends Component {
         this.loadProducts(pageNumber)
     }
 
-
-
     cartAdd = (id) => {
         var carrinho = localStorage.getItem('carrinho');
-        if(carrinho === null) {
-            var produtos = [id];
-            console.log(produtos);
+        
+        if (carrinho === null) {
             
+            var produtos = [id];
+            console.log(produtos); 
             localStorage.setItem('carrinho',JSON.stringify(produtos));
             var carrinhoNovo = localStorage.getItem('carrinho');
-            console.log('Testemsdaidm',carrinhoNovo);
+            console.log('ID Produtos',carrinhoNovo);
+       
         } else {
-            var produtosDoCarrinho = localStorage.getItem('carrinho');
-            var produtosDoCarrinho = JSON.parse(produtosDoCarrinho);
+            
+            var produtosDoCarrinho = localStorage.getItem('carrinho'); // eslint-disable-next-line
+            var produtosDoCarrinho = JSON.parse(produtosDoCarrinho); 
             console.log(produtosDoCarrinho);
+           
 
-            if(produtosDoCarrinho.includes(id) === false){
+            if (produtosDoCarrinho.includes(id) === false){
+                
                 produtosDoCarrinho.push(id);
                 localStorage.setItem('carrinho',JSON.stringify(produtosDoCarrinho));
                 var carrinhoAtualizado = localStorage.getItem('carrinho');
                 console.log('carrinhoAtualizado',carrinhoAtualizado);
+                
             }
         }
     }
-    goTocart = (id) => {
+    goTocart = (id, value) => {
         this.cartAdd(id);
        // window.location.href="/cart";
     }
-
-
+    
+    /* Função alternativa
+    AddCarrinho = (produto, valor, posicao ) => {
+        localStorage.setItem("produto" + posicao, produto);
+        localStorage.setItem("valor" + posicao, valor);
+        alert("Produto adicionado no carrinho !")
+    }
+    */
 
     render() {
         const { products, page, productInfo } = this.state
@@ -84,16 +94,12 @@ export default class Main extends Component {
                         <img src={product.avatar} alt={product.name}/>
                         <strong>{product.title}</strong>
                         <p>R$ {product.value.toFixed(2)}</p>
-
                         <div className="botoes-compra">
                             <Link to={`/products/${product._id}`}>Comprar</Link>
-                            <button onClick={() => this.goTocart(product._id)} className="botao-carrinho" type="button"> 
-                             
-                                 <img src={carrinho} alt="botao-carrinho"/>
-                            
+                            <button onClick={() => this.goTocart(product._id)} className="botao-carrinho" type="button">  
+                                 Adicionar ao carrinho
                             </button> 
-                        </div>
-                        
+                        </div>    
                     </article>
                 ))}
                 <div className="actions">

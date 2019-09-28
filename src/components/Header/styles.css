@@ -20,6 +20,11 @@ header#main-header {
     height: auto;
 }
 
+.carrinho-total:hover img {
+    transform: translate(-7px);
+    transition: all 0.6s;
+}
+
 .carrinho-total {
     position: absolute; right: 100px;
     width: 50px;

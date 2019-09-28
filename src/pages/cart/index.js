@@ -1,39 +1,26 @@
 import React, { Component } from 'react';
-import api from '../../services/api';
-
 
 export default class Main extends Component {
-    state = {
-        products: [],
-        productInfo: {},
-        page: 1,
-    };
 
-    componentDidMount(){
-        this.loadProducts();
-    }
-
-    loadProducts = async (page = 1) => {
-        const response = await api.get(`/products?page=${page}`);
-
-        const { docs, ...productInfo } = response.data;
-
-        this.setState({ products: docs, productInfo, page });
-    };
     render() {
-        const { products, page, productInfo } = this.state
+        
+        const { total=0 , valor = 0, i = 0 } = this.state
+
+        for(i=1; i<=99; i++ ){
+            var prod = localStorage.getItem("produto" + i + "");
+            if (prod != null)
+            {
+                document.getElementById("itens").innerHTML += localStorage.getItem("produto" + i );
+                document.getElementById("itens").innerHTML += " ";
+                document.getElementById("itens").innerHTML += "R$: " + localStorage.getItem("valor" + i );
+
+                valor = parseFloat(localStorage.getItem("valor + i "));
+                total = (total + valor );
+            }
+        }
 
         return (
-            <div className="product-list">
-                {products.map(product => (
-                    <article key={product._id}>
-                        <img src={product.avatar} alt={product.name}/>
-                        <strong>{product.title}</strong>
-                        <p>R$ {product.value.toFixed(2)}</p>
-                    
-                    </article>
-                ))}
-            </div>
+            document.getElementById("total").innerHTML = total.toFixed(2)
         )
     }
 }    

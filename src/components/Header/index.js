@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import logoaka from '../../assets/logoaka.svg'
 import elipse from '../../assets/elipse.svg';
@@ -16,7 +15,7 @@ const Header = () =>
                 <a href="/"> <img src={elipse} alt="Elipse" /> </a>
             </div>
         <div className="carrinho-total">
-            <a href="/cart"><img src={carrinho} /> </a>        
+            <a href="/cart"><img src={carrinho} alt="Carrinho" /> </a>        
         </div>
     </header>
     

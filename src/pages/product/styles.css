@@ -41,3 +41,23 @@
 .PayPalButton {
     margin-top: 5px;
 }
+
+.botao-carrinho:hover {
+    background:rgb(0, 224, 67);
+    color: #fff;
+}
+
+.botao-carrinho {
+    margin:10px;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid #3F00BF;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3F00BF;
+    transition: all 0.2s;
+}
+.botao-carrinho {
+    margin: 5px;
+}

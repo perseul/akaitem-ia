@@ -43,12 +43,12 @@ export default class Main extends Component {
         this.loadProducts(pageNumber)
     }
 
-    cartAdd = (id) => {
+    cartAdd = (id,avatar,title,value) => {
         var carrinho = localStorage.getItem('carrinho');
         
         if (carrinho === null) {
             
-            var produtos = [id];
+            var produtos = [id,avatar,title,value];
             console.log(produtos); 
             localStorage.setItem('carrinho',JSON.stringify(produtos));
             var carrinhoNovo = localStorage.getItem('carrinho');
@@ -61,9 +61,9 @@ export default class Main extends Component {
             console.log(produtosDoCarrinho);
            
 
-            if (produtosDoCarrinho.includes(id) === false){
+            if (produtosDoCarrinho.includes(id,avatar,title,value) === false){
                 
-                produtosDoCarrinho.push(id);
+                produtosDoCarrinho.push(id,avatar,title,value);
                 localStorage.setItem('carrinho',JSON.stringify(produtosDoCarrinho));
                 var carrinhoAtualizado = localStorage.getItem('carrinho');
                 console.log('carrinhoAtualizado',carrinhoAtualizado);
@@ -95,8 +95,9 @@ export default class Main extends Component {
                         <strong>{product.title}</strong>
                         <p>R$ {product.value.toFixed(2)}</p>
                         <div className="botoes-compra">
-                            <Link to={`/products/${product._id}`}>Comprar</Link>
-                            <button onClick={() => this.goTocart(product._id)} className="botao-carrinho" type="button">  
+                            <Link to={`/products/${product._id}`}>Saiba +</Link>
+                            <button onClick={() => this.cartAdd(product._id, product.avatar, product.title, product.value)}
+                             className="botao-carrinho" type="button">  
                                  Adicionar ao carrinho
                             </button> 
                         </div>    

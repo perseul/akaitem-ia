@@ -18,6 +18,34 @@ export default class Product extends Component {
         this.setState({ product: response.data });
     }
 
+    cartAdd = (id,avatar,title,value) => {
+        var carrinho = localStorage.getItem('carrinho');
+        
+        if (carrinho === null) {
+            
+            var produtos = [id,avatar,title,value];
+            console.log(produtos); 
+            localStorage.setItem('carrinho',JSON.stringify(produtos));
+            var carrinhoNovo = localStorage.getItem('carrinho');
+            console.log('ID Produtos',carrinhoNovo);
+       
+        } else {
+            
+            var produtosDoCarrinho = localStorage.getItem('carrinho'); // eslint-disable-next-line
+            var produtosDoCarrinho = JSON.parse(produtosDoCarrinho); 
+            console.log(produtosDoCarrinho);
+           
+
+            if (produtosDoCarrinho.includes(id,avatar,title,value) === false){
+                
+                produtosDoCarrinho.push(id,avatar,title,value);
+                localStorage.setItem('carrinho',JSON.stringify(produtosDoCarrinho));
+                var carrinhoAtualizado = localStorage.getItem('carrinho');
+                console.log('carrinhoAtualizado',carrinhoAtualizado);
+                
+            }
+        }
+    }
     render() {
         const { product } = this.state;
 
@@ -28,6 +56,9 @@ export default class Product extends Component {
                 <p>{product.description}</p>
                 <p> URL: <a href={product.url}>{product.url} </a> </p>
                 <div className="price"> <p>R$ {product.value} </p> </div>
+
+                <button onClick={() => this.cartAdd(product._id, product.avatar,product.title, product.value)}
+                className="botao-carrinho" type="button">Adicionar ao carrinho</button>
 
                 <div className="PayPalButton"><PayPalButton
                     amount={product.value}

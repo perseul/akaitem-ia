@@ -50,7 +50,7 @@
 }
 
 .product-list article a:hover {
-    background: rgb(0, 224, 67);
+    background:  #3F00BF;
     color: #FFF;
 }
 
@@ -99,8 +99,8 @@
 }
 
 .botao-carrinho:hover {
-    background: #3F00BF;
-    color: #FFF;
+    background:rgb(0, 224, 67);
+    color: #fff;
 }
 
 .botao-carrinho {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logoaka from '../../assets/logoaka.svg'
+import logoaka from '../../assets/logoaka.png'
 import elipse from '../../assets/elipse.svg';
 import carrinho from '../../assets/carrinho.svg';
 

@@ -43,12 +43,12 @@ export default class Main extends Component {
         this.loadProducts(pageNumber)
     }
 
-    cartAdd = (id,avatar,title,value) => {
+   cartAdd = (produtoParaAdd) => {
         var carrinho = localStorage.getItem('carrinho');
         
         if (carrinho === null) {
             
-            var produtos = [id,avatar,title,value];
+            var produtos = [produtoParaAdd];
             console.log(produtos); 
             localStorage.setItem('carrinho',JSON.stringify(produtos));
             var carrinhoNovo = localStorage.getItem('carrinho');
@@ -61,9 +61,9 @@ export default class Main extends Component {
             console.log(produtosDoCarrinho);
            
 
-            if (produtosDoCarrinho.includes(id,avatar,title,value) === false){
+            if (produtosDoCarrinho.includes(produtoParaAdd) === false){
                 
-                produtosDoCarrinho.push(id,avatar,title,value);
+                produtosDoCarrinho.push(produtoParaAdd);
                 localStorage.setItem('carrinho',JSON.stringify(produtosDoCarrinho));
                 var carrinhoAtualizado = localStorage.getItem('carrinho');
                 console.log('carrinhoAtualizado',carrinhoAtualizado);
@@ -95,11 +95,9 @@ export default class Main extends Component {
                         <strong>{product.title}</strong>
                         <p>R$ {product.value.toFixed(2)}</p>
                         <div className="botoes-compra">
-                            <Link to={`/products/${product._id}`}>Saiba +</Link>
-                            <button onClick={() => this.cartAdd(product._id, product.avatar, product.title, product.value)}
-                             className="botao-carrinho" type="button">  
-                                 Adicionar ao carrinho
-                            </button> 
+                            <Link to={`/products/${product._id}`}>Saiba + sobre</Link>
+                            <button onClick={() => this.cartAdd(product)}
+                            className="botao-carrinho" type="button">Adicionar ao carrinho</button>
                         </div>    
                     </article>
                 ))}

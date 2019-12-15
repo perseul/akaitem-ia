@@ -1,0 +1,101 @@
+.cart-info {
+    max-width: 700px;
+    margin: 20px auto 0;
+    padding: 20px;
+    background: #FFF;
+    border-radius: 5px;
+    border: 2px solid #3F00BF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-info strong {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.cart-info p {
+    color: #666;
+    line-height: 24px;
+    margin-top: 5px;
+}
+
+.cart-info p{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 224, 67);
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+.cart-info p a {
+    color: #069;
+}
+
+.cart-info img {
+    max-width: 15%;
+    border-radius: 5px 5px 0 0;
+}
+
+
+.botao-carrinho:hover {
+    background:rgb(0, 224, 67);
+    color: #fff;
+}
+
+.botao-carrinho {
+    margin:10px;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid #3F00BF;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3F00BF;
+    transition: all 0.2s;
+}
+
+.botao-limpa {
+    margin: 5px;
+}
+
+.botao-limpa:hover {
+    background:rgb(255, 0, 0);
+    color: #fff;
+}
+
+.botao-limpa {
+    margin:10px;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid rgb(255, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3F00BF;
+    transition: all 0.2s;
+}
+
+.botao-limpa {
+    margin: 5px;
+}
+
+.botoes-compra {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.total {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 224, 67);
+    margin-top: 5px;
+    line-height: 24px;
+}
+.PayPalButton {
+    margin-top: 10px;
+    width: 30%;
+}

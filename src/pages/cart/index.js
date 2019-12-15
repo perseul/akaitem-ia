@@ -10,41 +10,59 @@ export default class Cart extends Component{
         product: {},
     };
 
-    async componentDidMount() {
-        const { id } = this.props.match.params;
+    // async componentDidMount() {
+    //     const { id } = this.props.match.params;
 
-        const response = await api.get(`/products/${id}`);
+    //     const response = await api.get(`/products/${id}`);
 
-        this.setState({ product: response.data });
+    //     this.setState({ product: response.data });
+    // }
+
+    // cartRead = () => {
+    //     document.body.querySelector("itens").innerHTML = localStorage.getItem('carrinho')
+    // }
+
+    clearCarrinho = () => {
+    localStorage.clear('carrinho');
+    window.location.reload();
+        
     }
 
-    cartRead = () => {
-        var total = 0;
-        var value = 0;
-        var id = 0;
-
-        var prod = localStorage.getItem("produto");
-        if (prod != null){
-            document.getElementById("itens").innerHTML += localStorage.getItem("avatar");
-            document.getElementById("itens").innerHTML += localStorage.getItem("title");
-            document.getElementById("itens").innerHTML += localStorage.getItem("value");
-
-            value = parseFloat(localStorage.getItem("value"));
-            total = (total + value); 
+    getCarrinho = () => {
+        var produtosCarrinho = localStorage.getItem('carrinho');
+        if(produtosCarrinho !== null) {
+            return JSON.parse(produtosCarrinho);
         }
-        document.getElementById("total").innerHTML = total.toFixed(2);  
+        return [];
     }
-    
     render() {
-        const { product } = this.state;
+        var total = 0;
+        return(
+            <div className="cart-info">
+                {this.getCarrinho().map(product => {
+                    total = total + product.value;
+                    return (
+                        <article key={product._id}>
+                            <img src={product.avatar} alt={product.name}/>
+                            <strong>{product.title}</strong>
+                            <p>R$ {product.value.toFixed(2)}</p>
+                            
+                        </article>
+                    )
+                })}
+                
+                <div className="botoes">
+                <button type="button" className="botao-carrinho" 
+                onClick={() => this.getCarrinho()}> Carregar produtos </button> 
 
-        return (
-            <div className="itens">
-                <img src={product.avatar} alt={product.name}/>
-                <h1>{product.title}</h1>
-                <div className="price"> <p>R$ {product.value} </p> </div>
+                <button onClick={() => this.clearCarrinho()}
+                className="botao-limpa" type="button">Limpar carrinho</button>
+                </div>
+
+                <div className="total">Total: {total.toFixed(2)}</div>
+
                 <div className="PayPalButton"><PayPalButton
-                    amount={}
+                    amount={total}
                     onSuccess={async (details, data) => {
                         try {
                             await api.post("/pedidos", {
@@ -75,8 +93,9 @@ export default class Cart extends Component{
                             console.log("error",err);
                             
                         } 
-
                         alert("Pedido realizado com sucesso!");
+                        localStorage.clear('carrinho');
+                        window.location.reload();
                     }}
                     onError={error => {
                         alert("Erro ao realizar o pedido!");
@@ -86,9 +105,10 @@ export default class Cart extends Component{
                         alert('Compra cancelada');
                     }}
                 />
-                </div> 
-                <button type="button" className="botao-carrinho" onclick=" localStorage.clear(); location.reload();"> Limpar carrinho </button> 
+                </div>  
             </div>
-        );   
+        );
+           
     }
 }
+

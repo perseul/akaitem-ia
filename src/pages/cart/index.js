@@ -42,11 +42,14 @@ export default class Cart extends Component{
                 {this.getCarrinho().map(product => {
                     total = total + product.value;
                     return (
-                        <article key={product._id}>
-                            <img src={product.avatar} alt={product.name}/>
-                            <strong>{product.title}</strong>
-                            <p>R$ {product.value.toFixed(2)}</p>
-                            
+                        <article className="box-info" key={product._id}>
+                            <div className="box-img">
+                                <img src={product.avatar} alt={product.name}/>
+                            </div>
+                            <div className="box-texto">
+                                <strong>{product.title}</strong>
+                                <p>R$ {product.value.toFixed(2)}</p>
+                            </div>
                         </article>
                     )
                 })}

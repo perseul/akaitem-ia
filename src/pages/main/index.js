@@ -53,13 +53,13 @@ export default class Main extends Component {
             localStorage.setItem('carrinho',JSON.stringify(produtos));
             var carrinhoNovo = localStorage.getItem('carrinho');
             console.log('ID Produtos',carrinhoNovo);
-       
+            alert("Produto adicionado ao carrinho !");
         } else {
             
             var produtosDoCarrinho = localStorage.getItem('carrinho'); // eslint-disable-next-line
             var produtosDoCarrinho = JSON.parse(produtosDoCarrinho); 
             console.log(produtosDoCarrinho);
-           
+            alert("Produto adicionado ao carrinho !");
 
             if (produtosDoCarrinho.includes(produtoParaAdd) === false){
                 
@@ -67,23 +67,10 @@ export default class Main extends Component {
                 localStorage.setItem('carrinho',JSON.stringify(produtosDoCarrinho));
                 var carrinhoAtualizado = localStorage.getItem('carrinho');
                 console.log('carrinhoAtualizado',carrinhoAtualizado);
-                
+                alert("Produto adicionado ao carrinho !");
             }
         }
-    }
-    goTocart = (id, value) => {
-        this.cartAdd(id);
-       // window.location.href="/cart";
-    }
-    
-    /* Função alternativa
-    AddCarrinho = (produto, valor, posicao ) => {
-        localStorage.setItem("produto" + posicao, produto);
-        localStorage.setItem("valor" + posicao, valor);
-        alert("Produto adicionado no carrinho !")
-    }
-    */
-
+    }    
     render() {
         const { products, page, productInfo } = this.state
 

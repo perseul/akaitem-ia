@@ -7,7 +7,6 @@ O ia akaitem app é um aplicativo desenvolvido com react com integração a bibl
 ### Tecnologia
 * React
 * Node
-* MongoDb
 
 ### Como utilizar (how to)
 * _É necessario ter o Node.js instalado em sua maquina para executar os comandos npm no seu console (cmd)_ 

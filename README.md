@@ -18,11 +18,13 @@ _com a pasta node_modules em seu projeto digite o seguinte comando para iniciar 
 ```
 npm start
 ```
+![Screenshot_2023-05-30_10_03_47](https://github.com/perseul/akaitem/assets/53841377/80dccc8c-69ba-4400-96b6-0836c9d16596)
+
 ### Models de request para os produtos:
 utilize a api desenvolvida com node.js para realizar as requisições (ia-product-api) o link do repositorio se encontra na seção 'Links'
 _request example json_
 ```
-{`
+{
   "title":"playstation 5",
   "description":"playstation 5",
   "avatar":"https://images.kabum.com.br/produtos/fotos/sync_mirakl/181395/Console-Playstation-5-825GB-Leitor-Digital-PS5-_1658863170_g.jpg",

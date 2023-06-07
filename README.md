@@ -22,6 +22,7 @@ npm start
 
 ### Models de request para os produtos:
 utilize a api desenvolvida com node.js para realizar as requisições (ia-product-api) o link do repositorio se encontra na seção 'Links'
+_recomendação utilizar o Insomnia (link para download na seção de link) para realizar as requisições [post, put, delete e get]:_
 _request example json_
 ```
 {
@@ -34,5 +35,7 @@ _request example json_
 ```
 ## Links
 * [Download Node.js](https://nodejs.org/en)
+* [Download Insomnia rest](https://insomnia.rest/download)
 * [ia-product-api:](https://github.com/perseul/node-api)
+
 ----------------

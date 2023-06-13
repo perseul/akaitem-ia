@@ -9,9 +9,9 @@ import Cart from './pages/cart';
 const RoutesService = () => (
     <BrowserRouter>
     <Routes>
-        <Route exact path='/' element={Main} />
-        <Route path='/products/:id' element={Product} />
-        <Route path='/cart' element={Cart} />
+        <Route exact path='/' element={<Main/>} />
+        <Route path='/products/:id' element={<Product/>} />
+        <Route path='/cart' element={<Cart/>} />
     </Routes>
     </BrowserRouter>
 );

@@ -29,15 +29,23 @@ _Carrinho de compras_
 utilize a api desenvolvida com node.js para realizar as requisições (ia-product-api) o link do repositorio se encontra na seção 'Links'
 _recomendação utilizar o Insomnia (link para download na seção de link) para realizar as requisições [post, put, delete e get]:_
 _request example json_
+POST:http://localhost:3001/api/products (URI DE REQUEST)
 ```
 {
-  "title":"playstation 5",
-  "description":"playstation 5",
-  "avatar":"https://images.kabum.com.br/produtos/fotos/sync_mirakl/181395/Console-Playstation-5-825GB-Leitor-Digital-PS5-_1658863170_g.jpg",
-  "value":"50000",
-  "url":""
+  "title":"playstation 5 teste",
+	"description":"playstation 5",				 
+  "avatar":"https://images.kabum.com.br/produtos/fotos/sync_mirakl/181395/          Console-Playstation-5-825GB-Leitor-Digital-PS5-_1658863170_g.jpg",
+	"value":"50000",  
+	"url":"https://pt.wikipedia.org/wiki/PlayStation_5"
 }
 ```
+GET: http://localhost:3001/api/products (para listar todos produtos existentes no banco)
+
+DELETE: http://localhost:3001/api/products/{id} (inserir id do produto a ser deletado)
+
+_exemplo de request no Insomnia, no caso utilizei o seguinte url: http://localhost:3001/api/products porém voce também pode utilizar o seu endereço de ip:3001 exemplo: http://192.168.1.34:3001/api/products ({seu_ip}:3001/api/products)_
+![Captura de tela_2023-06-13_11-58-40](https://github.com/perseul/node-api/assets/53841377/f05f71fc-9473-49df-bf20-97dc223e0906)
+
 ## Links
 * [Download Node.js](https://nodejs.org/en)
 * [Download Insomnia rest](https://insomnia.rest/download)

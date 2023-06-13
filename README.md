@@ -11,9 +11,9 @@ O ia akaitem app é um aplicativo desenvolvido com react com integração a bibl
 ### Como utilizar (how to)
 * _É necessario ter o Node.js instalado em sua maquina para executar os comandos npm no seu console (cmd)_ 
 
-_digite o seguinte comando para instalar as dependecias do projeto (esse comando irá criar a pasta: node_modules no seu projeto):_
+_digite o seguinte comando para instalar as dependecias do projeto (esse comando irá criar a pasta: node_modules no seu projeto, *obs utilizar o comando --force para não ter problemas com as dependencias, pode forçar que o aplicativo irá instalar corretamente):_
 ```
-npm install
+npm install --force
 ```
 _com a pasta node_modules em seu projeto digite o seguinte comando para iniciar seu aplicatico react em um server local:_
 ```

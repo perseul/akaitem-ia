@@ -19,7 +19,11 @@ _com a pasta node_modules em seu projeto digite o seguinte comando para iniciar 
 ```
 npm start
 ```
-![Screenshot_2023-05-30_10_03_47](https://github.com/perseul/akaitem/assets/53841377/80dccc8c-69ba-4400-96b6-0836c9d16596)
+_Pagina inicial com os produtos_
+![Captura de tela_2023-06-12_23-20-02](https://github.com/perseul/akaitem/assets/53841377/6fbdddc4-ccf5-4833-82a5-2314b83e3635)
+
+_Carrinho de compras_
+![Captura de tela_2023-06-12_23-21-22](https://github.com/perseul/akaitem/assets/53841377/cb865ba9-219f-4792-88a2-8d9f730786e0)
 
 ### Models de request para os produtos:
 utilize a api desenvolvida com node.js para realizar as requisições (ia-product-api) o link do repositorio se encontra na seção 'Links'

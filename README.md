@@ -29,6 +29,7 @@ _Carrinho de compras_
 utilize a api desenvolvida com node.js para realizar as requisições (ia-product-api) o link do repositorio se encontra na seção 'Links'
 _recomendação utilizar o Insomnia (link para download na seção de link) para realizar as requisições [post, put, delete e get]:_
 _request example json_
+
 POST:http://localhost:3001/api/products (URI DE REQUEST)
 ```
 {

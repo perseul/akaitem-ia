@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^1.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.8.0",
     "react-paypal-button-v2": "^2.6.3",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1"
